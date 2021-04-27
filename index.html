@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>The Curtain Raiser</title>
+    <link rel="icon" href="src/icon.png">
+    <meta name="description" content="fullPage full-screen normal scrolling with autoScrolling." />
+    <meta name="keywords"
+        content="fullpage,scrolloverflow,inside,overflow,scroll,jquery,demo,screen,fullscreen,backgrounds,full-screen" />
+    <meta name="Resource-type" content="Document" />
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="dist/fullpage.css" />
+    <link rel="stylesheet" type="text/css" href="examples.css" />
+    <style>
+        * {
+
+            color: white;
+        }
+
+        .bg-1 {
+            background-image: url("src/bg-1.png");
+            /* The image used */
+            background-color: #000000;
+            /* Used if the image is unavailable */
+            /* You must set a specified height */
+            background-position: center;
+            /* Center the image */
+            background-repeat: no-repeat;
+            /* Do not repeat the image */
+            background-size: cover;
+            /* Resize the background image to cover the entire container */
+        }
+        .bg-2 {
+            background-image: url("src/bg-2.png");
+            /* The image used */
+            background-color: #000000;
+            /* Used if the image is unavailable */
+            /* You must set a specified height */
+            background-position: center;
+            /* Center the image */
+            background-repeat: no-repeat;
+            /* Do not repeat the image */
+            background-size: cover;
+            /* Resize the background image to cover the entire container */
+        }
+
+        .plays {
+            max-height: 200px;
+            height: auto;
+        }
+
+        .cast {
+            max-width: 200px;
+            height: auto;
+            margin: 20px;
+        }
+
+        .dropdown-menu,
+        #menu {
+            background-color: rgb(0, 0, 0, 0.9);
+            ;
+        }
+
+        .awards li {
+            border: 2px solid red;
+            border-bottom-right-radius: 10px;
+            border-top-right-radius: 10px;
+            border-bottom: none;
+            border-left: none;
+
+            font-size: 14px;
+            text-align: justify;
+            margin: 2px;
+            padding: 2px;
+        }
+
+        .profile_pic {
+            max-height: 450px;
+            border-radius: 10px;
+            width: auto;
+        }
+
+        .expetise_image {
+            max-height: 150px;
+            width: auto;
+            box-shadow: 2px -2px 2px whitesmoke;
+            border-radius: 10px;
+        }
+
+        .partner {
+            max-height: 110px;
+            width: auto;
+            margin-bottom: 5%;
+        }
+
+        .slide {
+            color: white;
+        }
+
+        ul,
+        ol {
+            color: white;
+            text-align: justify;
+        }
+
+        /* Style for our header texts
+    * --------------------------------------- */
+
+
+        p {
+            color: #fff;
+            text-align: justify;
+            font-size: 18px;
+        }
+
+        /* Centered texts in each section
+    * --------------------------------------- */
+        .section {
+            text-align: center;
+        }
+
+
+
+        /* Bottom menu
+    * --------------------------------------- */
+        #infoMenu li a {
+            color: #fff;
+        }
+
+        /* Lazy loading background
+    * --------------------------------------- */
+        #section2.load-background {
+            background-image: url(imgs/bg2.jpg);
+        }
+
+    </style>
+
+    <!--[if IE]>
+        <script type="text/javascript">
+             var console = { log: function() {} };
+        </script>
+    <![endif]-->
+</head>
+
+<body>
+
+
+    <div id="menu" class="dropdown ">
+
+        <button class="btn  " type="button" data-toggle="dropdown" style="top: 20; left: 10;"><i
+                class="fa fa-bars fa-2x"></i>
+        </button>
+        <ul class="dropdown-menu section" id="menu">
+
+            <li data-menuanchor="secondPage"><a href="#secondPage">Introduction</a></li>
+            <li data-menuanchor="3rdPage"><a href="#3rdPage">About Us</a></li>
+            <li data-menuanchor="4thPage"><a href="#4thPage">Expertise</a></li>
+            <li data-menuanchor="5thPage"><a href="#5thPage">Strategic Partners</a></li>
+            <li data-menuanchor="6thPage"><a href="#6thPage">Working Approach</a></li>
+            <li data-menuanchor="7thPage"><a href="#7thPage">Personal Profiles</a></li>
+            <li data-menuanchor="8thPage"><a href="#8thPage">Company Management</a></li>
+            <li data-menuanchor="9thPage"><a href="#9thPage">Cast</a></li>
+            <li data-menuanchor="10thPage"><a href="#10thPage">Plays</a></li>
+            <li data-menuanchor="11thPage"><a href="#11thPage">Contact</a></li>
+        </ul>
+        <a href="#firstPage" style="display: inline-block; text-decoration: none;">
+            <p>The Curtain Raiser</p>
+        </a>
+    </div>
+
+
+    <div id="fullpage">
+        <div class="section bg-1" id="section0" >
+            <div class="intro">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 ">
+                            <div class="">
+                                <img data-srcset="src/tcr-gif.gif" alt="1" class="w-100" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section bg-2" id="section1">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h1>The Curtain Raiser Productions</h1><br>
+                        <p>
+                            The Curtain Raiser, a student-founded body, is dedicated to strengthen the social awareness
+                            and development process through art based development approach specially using the unique
+                            platform of Theatre.
+                            The organization aspires to present inspirational messages for social awakening through art
+                            and culture.Interactive theatre,documentaries,audio visual communications,social media and
+                            other art based activities are the best medium that serves the purpose.We are determined to
+                            promote art,culture and civic sense without espousing religious,ethnic,political,gender or
+                            any
+                            other biases.
+                            We are striving hard to promote intercultural harmony, through theatre and audio-visual
+                            communications that leads to develop a moderate society where noble values are respected,
+                            patience is practiced,tolerance prevails,opinions are valued and above all individual’s
+                            freedom
+                            is ensured.
+                            We enlighten and encourage our audience to become self-determined thinkers for being
+                            socially responsible and active members of the society. We intend to motivate them to
+                            participate in our art-based social development activities.
+                            We enlighten and encourage our audience to become self-determined thinkers for being
+                            socially responsible and active members of the society. We intend to motivate them to
+                            participate in our art-based social development activities.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section bg-1" id="section2" style="background-image: url(src/bg-1.png);">
+            <div class="slide" id="slide1">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6 col-sm-12">
+                            <h1>Vision</h1>
+                            <p>
+                                We yearn to evolve a society that is tolerant, harmonized, peacefully just, democratic
+                                and
+                                flexible enough to accept each other despite of the differences of ethnicity, language,
+                                ideology
+                                and faith.
+                            </p>
+                        </div>
+                        <div class="col-md-6 col-sm-12">
+                            <h1>Mission</h1>
+                            <p>
+                                Through art-based cultural activities, audio-visual communication, theatre and other
+                                performing arts,we are keen to promote and play our part to preserve our art and culture
+                                for
+                                the brighter face of our society and the establishment of such atmosphere where there is
+                                no
+                                exploitation and oppression on the basis of language,sex,faith,ideology or race etc.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slide " id="slide2">
+                <div class="container">
+                    <h1>Aims & Objectives</h1>
+
+                    <ol>
+                        <li>
+                            We are aimed at promoting art & culture in our society for developing tolerance, peace
+                            and
+                            harmony as art and culture can really fruitful in this regard.
+                        </li>
+                        <li> Through interactive communication,we intend to deliver strong messages for the
+                            establishment of
+                            harmony among different ethnic groups.</li>
+                        <li>
+                            We are passionate to evolve and strengthening cultural ties among different strata of
+                            society
+                            and by
+                            doing so they will be able to create space for each other.
+                        </li>
+                        <li>
+                            Our purpose is to utilize audio-visual communication for the promotion of values of
+                            forbearance
+                            and acceptance of the people belonging to different ethnic groups in a society.
+                        </li>
+                        <li>
+                            We are motivated that performing arts can do wonder for creating peaceful environment by
+                            developing inter-faith understanding.
+                        </li>
+                        <li>
+                            We are focusing on the fact that we must ‘agree to disagreement’ and that is only
+                            possible when
+                            there is interaction between different social groups.
+                        </li>
+                    </ol>
+
+                </div>
+            </div>
+            <div class="slide " id="slide3">
+                <div class="container">
+                    <h1>Future Goals</h1>
+
+                    <ol>
+                        <li>
+                            Devising innovative interactive communication among different community groups for the
+                            establishment of strong bonds between them.
+                        </li>
+                        <li> Developing and strengthening interactive communication for expanding outreach and
+                            contributing to the process of social change. </li>
+                        <li>
+                            Promotion of capacity building and enhancement of knowledge & skills of the marginalized
+                            social
+                            groups’ i.e.women and minority etc.
+                        </li>
+                        <li>
+                            Develop a proactive and sustainable interactive communication institute for promoting
+                            arts,
+                            culture and communication in communities.
+
+                        </li>
+                        <li>
+                            To create peaceful,democratic & just society
+                        </li>
+                        <li>
+                            Collaboration with government,civil society,educational institutions & other
+                            stakeholders.
+                        </li>
+                        <li>
+                            Using interactive communications as tool.
+                        </li>
+                        <li>
+                         Developing linkages with like-minded people & organizations.
+                        </li>
+                    </ol>
+
+                </div>
+            </div>
+        </div>
+        <div class="section bg-2" id="section3">
+            <div class="intro">
+                <div class="container">
+                    <h1>Our Core Expertise</h1>
+                    <div class="row">
+                        <div class="col-md-4 col-sm-12 justify-content-center d-flex">
+                            <ol>
+                                <li>
+                                    Theatre
+                                </li>
+                                <li>
+                                    Street Theatre
+                                </li>
+                                <li>
+                                    Cultural Events & Activities
+                                </li>
+                                <li>
+                                    Event Management
+                                </li>
+                                <li>
+                                    Short Films
+                                </li>
+                                <li>
+                                    TVC & DVC
+                                </li>
+                                <li>
+                                    Radio Plays & programs
+                                </li>
+                                <li>
+                                    Training Workshops
+                                </li>
+                            </ol>
+                        </div>
+                        <div class="col-md-8 col-sm-12">
+                            <div class="row justify-content-around d-flex">
+                                <div class="col-md-4 col-sm-6">
+                                    <img src="src/_MG_6706.JPG" class=" expetise_image m-2" alt="">
+                                </div>
+                                <div class="col-md-4 col-sm-6">
+                                    <img src="src/FB_IMG_1561323649612.jpg" class="  expetise_image m-2" alt="">
+                                </div>
+                                <div class="col-md-4 col-sm-6">
+                                    <img src="src/FB_IMG_1561323666603.jpg" class=" expetise_image m-2" alt="">
+                                </div>
+                                <div class="col-md-4 col-sm-6">
+                                    <img src="src/FB_IMG_1582624016953.jpg" class="expetise_image m-2" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="section bg-1" id="section4">
+
+            <div class="container">
+                <h1> Our Strategic Partners</h1>
+                <div class="row d-flex justify-content-around">
+                    <div class="col-md-2 col-sm-4">
+                        <img src="src/sp1.jpg" class="partner w-100" alt="">
+                    </div>
+                    <div class="col-md-2 col-sm-4">
+                        <img src="src/sp2.jpg" class="partner w-100" alt="">
+                    </div>
+                    <div class="col-md-2 col-sm-4">
+                        <img src="src/sp3.png" class="partner w-100" style="background-color: white;" alt="">
+                    </div>
+                    <div class="col-md-2 col-sm-4">
+                        <img src="src/sp4.jpg" class="partner w-100" alt="">
+                    </div>
+                    <div class="col-md-2 col-sm-4">
+                        <img src="src/sp5.png" class="partner w-100" alt="">
+                    </div>
+                    <div class="col-md-2 col-sm-4">
+                        <img src="src/sp6.jpg" class="partner w-100" alt="">
+                    </div>
+                    <div class="col-md-2 col-sm-4">
+                        <img src="src/sp7.jpg" class="partner w-100" alt="">
+                    </div>
+                    <div class="col-md-2">
+                        <img src="src/sp8.jpg" class="partner w-100" alt="">
+                    </div>
+                    <div class="col-md-2 col-sm-4">
+                        <img src="src/sp9.jpg" class="partner w-100" alt="">
+                    </div>
+                    <div class="col-md-2 col-sm-4">
+                        <img src="src/sp10.png" class="partner w-100" alt="">
+                    </div>
+                    <div class="col-md-2 col-sm-4">
+                        <img src="src/sp11.png" class="partner w-100" alt="">
+                    </div>
+                    <div class="col-md-2 col-sm-4">
+                        <img src="src/sp12.png" class="partner w-100" alt="">
+                    </div>
+                    <div class="col-md-2 col-sm-4">
+                        <img src="src/sp13.png" class="partner w-100" alt="">
+                    </div>
+                    <div class="col-md-2 col-sm-4">
+                        <img src="src/sp14.jpg" class="partner w-100" alt="">
+                    </div>
+                    <div class="col-md-2 col-sm-4">
+                        <img src="src/sp15.png" class="partner w-100" alt="">
+                    </div>
+                    <div class="col-md-2 col-sm-4">
+                        <img src="src/sp16.jpg" class="partner w-100" alt="">
+                    </div>
+                    <div class="col-md-2 col-sm-4">
+                        <img src="src/patari.png" class="partner w-100" alt="">
+                    </div>
+                    <div class="col-md-2 col-sm-4">
+                        <img src="src/bol_plaoon.jpg" class="partner w-100" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section bg-2" id="section5">
+            <div class="slide" id="slide1">
+                <div class="container">
+                    <h1>Working Approach</h1>
+                    <p>
+                        Interactive & Audio-Visual communication is a complex undertaking. It is a strong medium for the
+                        infusion of ideas among its audience. Quality ultimately depends upon each input and must be
+                        ensured at every stage of the process from pre-production to production and also in its post
+                        project
+                        reporting.We understand the whole process and we are striving hard to promote the noble values
+                        of patience, forgiveness,respect of other’s point of view and cultural diversity through theatre
+                        and
+                        videos.
+                    </p>
+                </div>
+            </div>
+            <div class="slide " id="slide2">
+                <div class="container">
+                    <h1>Creative Approach</h1>
+                    <p>
+                        The foundation of our creative approach is content driven. We start our creative process by
+                        working with our project partners on multidisciplinary concepts and our content development
+                        team first defines the theme, main storylines and messages that are to be conveyed through the
+                        interactive & audio-visual communications etc.Then we immerse ourselves in the content,provided
+                        either by the partners or by our own research. Only then we have a thorough understanding of
+                        what needs to be conveyed.So we start to make decisions about how best to convey it.
+                        We develop production paths for all our projects,identifying any unknowns,potential problems and
+                        unanswered questions. From the production path, we create detailed production schedule.We
+                        recognize that strict adherence to a schedule of completion for each component is a key to stay
+                        on
+                        budget.
+                        We identify the target audience for each message to be conveyed earlier than the content
+                        development process to ensure that the communication programs are going to educate and move
+                        its audience.
+                    </p>
+                </div>
+            </div>
+            <div class="slide " id="slide3">
+                <div class="container">
+                    <h1> Our strategic working of is based on the following steps:</h1>
+                    <p>
+                        • Human Resource development <br>
+                        • New talent hunting<br>
+                        • Involvement of all related stakeholders<br>
+                        • Establishment of own academic and campus setups for grooming and knowledge sharing<br>
+                        • Seminars,workshops and people to people contact both inland and abroad<br>
+                        • Research & Surveys & in depth needs and capacity analysis of the potential disciplines.<br>
+                        • Trainings<br>
+                        • Collaboration with donor agencies,government,international and multinational companies<br>
+                        • Collaboration with local government.<br>
+                        • Collaboration with COs,NPOs,CSOs,NGOs,Research institutes,Universities.<br>
+                        • Events<br>
+                        • Utilization of such collaborations for the maximization of stakeholders’ involvement in
+                        socioeconomic activities and development.<br>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="section bg-1" id="section6">
+            <div class="container">
+                <h1>Personal Profiles</h1>
+                <p>
+                    The Curtain Raiser is a students’-founded body possessing young artists belonging to different
+                    wellreputed universities having diverse experience in the field.The team members have won numerous
+                    national level nominations and awards across the country.
+                    Detailed portfolio of team members and the productions will be furnished upon further request.
+                </p>
+            </div>
+        </div>
+        <div class="section bg-2" id="section7">
+
+
+            <div class="slide" id="slide1">
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-4 col-sm-12">
+                            <img class="profile_pic" src="src/alif.jpeg" alt="">
+                        </div>
+                        <div class="col-lg-8 col-sm-12">
+                            <h1>CEO / Director</h1>
+                            <p class="small">
+                                <b style="color: red;">Muhammad Ali Farooqi</b> is presently enrolled in PhD
+                                Pakistan Studies at QAU Islamabad. He is working
+                                as a joint secretary in "Azeem Educational
+                                Conference (Regd.)", and as a Bureau Chief in
+                                Monthly "Azeem English Magazine".He has worked
+                                as the President of "Quaidian Dramatics Club,
+                                Quaid i Azam University, Islamabad" for four years.
+                                He is also the founder of The Curtain Raiser.The
+                                Curtain Raiser,a student-founded body,is dedicated
+                                to strengthen the social awareness and
+                                development process through art based
+                                development approach specially using the unique
+                                platform of Theatre. He has led his team across
+                                several national level drama competitions and
+                                festivals across the country.
+                                Throughout his journey,he has worked on various themes,in relation to United Nations
+                                Sustainable
+                                Development Goals, including women empowerment, gender violence, child literacy, health
+                                issues,
+                                mental health, corruption and wildlife conservation through the medium of street
+                                theatre, radio
+                                dramas, short films, documentaries, live theatre and social media campaigns. He also
+                                organized
+                                multiple national level drama competitions and workshops to give a platform to youth of
+                                the nation
+                                to showcase their talent and works in a positive way. His diverse genre of work has
+                                resulted in
+                                national level acclaim which reflects by his remarkable achievements. In relation to his
+                                youth
+                                activism,he was featured in the annual blog of 'Theatre Across Borders' by "Thespo", a
+                                youth based
+                                organization in India.Moreover he has an honor to be part of National Cultural and Film
+                                Policy as
+                                youth activist and volunteer head. He worked with his team in the National Artists'
+                                Convention
+                                2018 held at Pakistan National Council of the Arts and drafted Pakistan's first ever
+                                National Cultural
+                                and Film Policy.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slide" id="slide2">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6 col-sm-12">
+                            <p class="small">
+                                Being a President of the club,as an actor and director as well,he has led his team
+                                and performed on
+                                many national platforms in prestigious institutes and not only did he perform but
+                                won several major
+                                awards.His achievements include;
+                            </p>
+
+                            <ul class="container awards">
+                                <li>“Best Positive Character” at Tehlka 2016 </li>
+                                <li>“Best Actor Male” at The 18th All-Pakistan Performing Arts Festival GIKI 2016.
+                                </li>
+                                <li>“Best Actor Lead” at Youth Drama Festival PNCA 2016.</li>
+                                <li>“Best Director” at Youth Drama Festival PNCA 2016.</li>
+                                <li>“Best Director” at NUML,Islamabad 2017. </li>
+                                <li>“Best Director” at Murree Arts Council 2017. </li>
+                                <li>“Best Director” at 20th All Pakistan Performing Arts Festival,GIKI 2018.</li>
+                                <li>“Innovative Youth Award” at SWAT by KPK Government.</li>
+                                <li>“Best Director” at 21st All Pakistan Performing Arts Festival,GIKI 2019.</li>
+                            </ul>
+                            <p class="small">
+                                Year 2016 has been very lucky for him as he continued achieving more and the
+                                greatest. In Youth
+                                Drama Festival organized by PNCA he stole the show not only by putting up a great
+                                performance
+                                and winning hearts but also by winning “Best Actor”,Best Director” and “Best Play”
+                                awards.
+                                He is a person who is of a view that exciting things often happen when people step
+                                out of their
+                                comfort zone and make space to go for their dreams.He believes that doing what you
+                                love to do is
+                                invigorating; it doesn’t feel like work and could be the most joy you ever
+                                experience.Along with
+                                Quaidian Dramatics club he also managed NUML Dramatics CLUB for year 2016-17 as
+                                President
+                                and that too in an impressive way.His team NDC stood
+                            </p>
+
+                        </div>
+                        <div class="col-lg-6 col-sm-12">
+
+                            <ul class="container awards">
+                                <li>1st in “Hamarey Rang Aman k Rang”, </li>
+                                <li>2nd in “National Theatre Festival” at The Millennium University College TMUC
+                                    Islamabad </li>
+                                <li>3rd in “Drama Festival” at Murree Arts Council.</li>
+                            </ul>
+                            <p class="small ">
+                                His recent production was “Mein Haan Waras” at Alhamra Arts Council Lahore in
+                                September 2017.
+                                Mein Haan Waras won 20th All Pakistan Performing Arts Festival,GIK,KPK and multiple
+                                individual
+                                awards at several other competitions.
+                                2nd in “National Theatre Festival” at The Millennium University College TMUC
+                                Islamabad
+                                3rd in “Drama Festival” at Murree Arts Council.
+                                1st in “Hamarey Rang Aman k Rang”,
+                                His organization aspires to present inspirational messages for social awakening
+                                through art and
+                                culture.Interactive theatre,documentaries,audio visual communications,social media
+                                and other art
+                                based activities are the best medium that serves the purpose. He is determined to
+                                promote art,
+                                culture and civic sense without espousing religious,ethnic,political,gender or any
+                                other biases.
+                                Striving hard to promote intercultural harmony,through theatre and audio-visual
+                                communications
+                                that leads to develop a moderate society where noble values are respected, patience
+                                is practiced,
+                                tolerance prevails,opinions are valued and above all individual’s freedom is
+                                ensured.
+                                He yearns to evolve a society that is tolerant, harmonized, peacefully just,
+                                democratic and flexible
+                                enough to accept each other despite of the differences of
+                                ethnicity,language,ideology and faith.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="slide" id="slide3">
+                    <div class="container">
+                        <div class="row ">
+                            <div class="col-md-4 col-sm-12">
+                                <img src="src/imran.jpg" class="profile_pic" alt="">
+                            </div>
+                            <div class="col-md-8 col-sm-12">
+                                <h1>Writer</h1>
+                                <p class="small container-fluid">
+                                    <b style="color: red;">Mr. Imran Khan</b> is presently rendering his services as
+                                    Assistant
+                                    Professor of English at Islamabad Model Post Graduate College
+                                    H-8 Islamabad and a Visiting Faculty member at Quaid-i-Azam
+                                    University,Islamabad.He has done his M Phil in English Literature
+                                    from Govt.College University Lahore.
+                                    His M Phil has sharpened his skills of creative writings since he
+                                    himself is a poet, playwright and dramatist.After his appointment as
+                                    lecturer at Govt.Dyal Singh College Lahore,the dramatics activities
+                                    of the college were organized by him.
+                                    Now he is Incharge of IMPGC H-8 Islamabad Dramatics Club as well
+                                    as the Editor of the college magazine. He is also the playwright and
+                                    co-director at the Quaidian Dramatics Club,Quaid i Azam University,Islamabad.
+                                    His Drama "Sarisht" and "Girah" have been performed at Youth Drama Festival,Pakistan
+                                    National
+                                    Council of the Arts,The GIKI All-Pakistan Performing Arts Competition, FAST
+                                    University
+                                    Lahore,
+                                    IBA Karachi and NUML Islamabad and have secured first positions in these festivals
+                                    respectively.
+                                    His dramas Sarisht and Mein Haan Waaras representing QAU has been nominated for the
+                                    Thespo’18 Mumbai and Atellier’s Act Festival Delhi 2019 respectively.He has won the
+                                    award of Best
+                                    Playwright in numerous national level drama festivals of Pakistan.
+                                    He has also represented the Dramatics Club of Quaid e Azam University Islamabad on
+                                    Such
+                                    TV.
+                                    Being the student of Ph.D at Quaid i Azam University, he is doing research on
+                                    Punjabi
+                                    Resistance
+                                    Literature.
+                                    He has also written two dramas namely "Begangi" and "Qeemat" for NUML Dramatics CLUB
+                                    NUML Islamabad.His Drama "Begangi" performed by NUML students secured
+                                </p>
+                                <ul class="awards container">
+                                    <li>First position at National Drama Festival at The Millennium University College
+                                        TMUC
+                                        Islamabad.</li>
+                                    <li>Second Position at Murree Arts Council and third position at NESCOM Drama
+                                        Competition.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="slide" id="slide4">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12 ">
+                                <p>
+                                    As an honorary dramatist,he has written a Drama named "Dr.Salahuddin" for NUMS
+                                    Dramatic
+                                    and
+                                    Performing Arts Society which won NAB Youth Drama Competition and gained third
+                                    position
+                                    at
+                                    Murree Arts Council as well.
+                                    In addition, he has served as a judge at different drama competitions including NUML
+                                    Film and
+                                    Drama Festival and Model Girls College F-7 Islamabad. Recently, His Drama "Dr.
+                                    Salahuddin was
+                                    performed at Islamabad Club with the cooperation of Apna Ghar NGO on 13 August 2017.
+                                    Moreover,some of his poems and short stories have been published in educational and
+                                    public sector
+                                    magazines. He has been working as an editor and Assistant Editor for Azeem English
+                                    Magazine,Gujranwala. His most recent productions was Girah which was performed at
+                                    Theatre
+                                    Wallay Islamabad and well received by the people of Islamabad and Rawalpindi.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="slide" id="slide5">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-4 col-sm-12">
+                                <img src="src/bazmi.jpg" class="profile_pic" alt="Abrar Bazmi">
+                            </div>
+                            <div class="col-md-8 col-sm-12">
+                                <h1>Techincals Head</h1>
+                                <p>
+                                    <b style="color: red;">Abrar Bazmi</b> with the experience of more than 20 years in
+                                    the
+                                    field,Abrar Bazmi adds more professional touch to the team.An
+                                    NCA graduate and music degree from Yamaha School of Music,
+                                    Sirilanka, Bazmi shares his expertise in form of technical
+                                    supervision of the The Curtain Raiser’s productions.
+                                    He has worked with renowned TV channels and film directors of
+                                    the country. Alhamra Lahore has hosted his numerous
+                                    productions from time to time.
+                                    He is a prolific music composer and has worked with famous
+                                    names of the music industry including Sahir Ali Bagga, Sara Raza
+                                    Khan,Nauman Javed,Abdullah Qureshi,Rafaqat Ali Khan and Aqdas
+                                    Hashmi.Abraz Bazmi deals with the sounds and music of the whole production as well.
+                                    He is
+                                    also
+                                    associated with Bahria Colleges as a Media Consultant.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="slide" id="slide6">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-4 col-sm-12">
+                                <img src="src/awais.jpg" class="profile_pic" alt="Awais Farooqi">
+                            </div>
+                            <div class="col-md-8 col-sm-12">
+                                <h1> Production Manager </h1>
+                                <p>
+                                    <b style="color: red;">M Awais Farooqi</b> has been part of student theatre since
+                                    2015.
+                                    Being an experienced person in student theatre and universities’
+                                    drama clubs and head organizer of several drama festivals, he has
+                                    been an integral part of the team by managing stuff related to the
+                                    production which includes management, coordination, logistics
+                                    etc. Moreover, he has worked as President of NUML and NUMS
+                                    universities’ drama clubs.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="slide" id="slide7">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-4 col-sm-12">
+                                <img src="src/fatma.jpg" class="profile_pic" alt="Fatmina Altaf">
+                            </div>
+                            <div class="col-md-8 col-sm-12">
+                                <h1>Art Director </h1>
+                                <p>
+                                    <b style="color: red;">Fatima Altaf</b> is a psychology graduate from QAU. She has
+                                    been
+                                    working with the team for four years as an Art Director.She deals
+                                    with the props,costumes and set designs of the production.In the
+                                    past few years,she has won several awards for Best Production at
+                                    youth level and has worked with numerous event management
+                                    companies for her wonderful designs
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="section bg-1" id="section8">
+
+            <div class="col-12">
+                <div class="slide" id="slide1">
+                    <div class="container">
+
+                        <h1>Cast</h1>
+                        <p>
+                            Other members of our team are young enthusiasts who are striving to bring a change in
+                            society
+                            through contemporary Theatre, applied drama and radio broadcasting. Each member in our team
+                            has an honor of performing in prestigious institutes and national platforms throughout the
+                            country
+                            and holds a number of awards at youth and national level.
+                        </p>
+                    </div>
+
+                </div>
+                <div class="slide" id="slide2">
+                    <div class="container">
+                        <div class="row d-flex justify-content-between">
+                            <img src="src/cst.jpg" class="cast img-thumbnail" alt="">
+                            <img src="src/cst1.jpg" class="cast img-thumbnail" alt="">
+                            <img src="src/cst2.jpg" class="cast img-thumbnail" alt="">
+                            <img src="src/cst3.jpg" class="cast img-thumbnail" alt="">
+                            <img src="src/cst4.jpg" class="cast img-thumbnail" alt="">
+                            <img src="src/cst5.jpg" class="cast img-thumbnail" alt="">
+                            <img src="src/cst7.jpg" class="cast img-thumbnail" alt="">
+                            <img src="src/cst8.jpg" class="cast img-thumbnail" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="section bg-2  " id="section9">
+            <div class="container">
+                <h1>Plays</h1>
+                <div class="row d-flex justify-content-between">
+                    <img src="src/dr1.jpg" class="plays img-thumbnail" alt="">
+                    <img src="src/dr2.jpg" class="plays img-thumbnail" alt="">
+                    <img src="src/dr3.jpg" class="plays img-thumbnail" alt="">
+                    <img src="src/dr4.jpg" class="plays img-thumbnail" alt="">
+                    <img src="src/dr5.jpg" class="plays img-thumbnail" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="section bg-1" id="section10">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h1>Contact Us</h1>
+                        <div class="lead">
+                            <i class=" fa fa-phone" style="color: red;"> </i> 0345 66 00 629 <br>
+                            <i class=" fa fa-envelope " style="color: red;"> </i> <a style="color: white;"
+                                href="mailto:thecurtainraiser1@gmail.com">thecurtainraiser1@gmail.com</a> <br>
+                            <i class=" fa fa-home " style="color: red;"> </i> Office No.6, Ras Arcade, Edhi Market,
+                            G-13/4, Islamabad <br>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="dist/fullpage.js"></script>
+    <script type="text/javascript" src="examples.js"></script>
+    <script type="text/javascript" src="vendors/scrolloverflow.js"></script>
+
+    <script type="text/javascript">
+        var myFullpage = new fullpage('#fullpage', {
+            menu: '#menu',
+            anchors: ['firstPage', 'secondPage', '3rdPage', '4thPage', '5thPage', '6thPage', '7thPage', '8thPage', '9thPage', '10thPage', '11thPage'],
+            //sectionsColor: ['#000000', '#000000', '#000000', '#000000', '#000000', '#000000', '#000000', '#000000', '#000000'],
+            onLeave: function (origin, destination, direction) {
+                if (destination.index === 2) {
+                    destination.item.classList.add('load-background');
+                }
+            }
+        });
+    </script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
